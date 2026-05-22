@@ -114,7 +114,7 @@ export default function Home() {
                 gap: 12,
                 boxShadow: '0 0 60px rgba(232,255,0,0.08)',
               }}>
-                <img src="/src/assets/photo.jpg" style={{
+                <img src="/photo.jpg" style={{
   width: 160, height: 160, borderRadius: '50%',
   objectFit: 'cover', objectPosition: 'top',
   border: '4px solid var(--accent)',
