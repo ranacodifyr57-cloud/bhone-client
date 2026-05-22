@@ -17,7 +17,7 @@ export default function Login() {
     setLoading(true)
     setError('')
     try {
-      const { data } = await axios.post('/api/auth/login', form)
+      const { data } = await axios.post('https://bhone-server.vercel.app/api/auth/login', form)
       localStorage.setItem('token', data.token)
       navigate('/admin')
     } catch (err) {
