@@ -137,6 +137,19 @@ export default function Navbar() {
           .mobile-toggle { display: flex !important; }
         }
       `}</style>
+      <a href="https://wa.me/923247352486" 
+   target="_blank"
+   style={{
+     position: 'fixed', bottom: 24, right: 24,
+     width: 56, height: 56, borderRadius: '50%',
+     background: '#25D366',
+     display: 'flex', alignItems: 'center', 
+     justifyContent: 'center',
+     fontSize: 28, zIndex: 999,
+     boxShadow: '0 4px 20px rgba(37,211,102,0.4)',
+   }}>
+  💬
+</a>
     </header>
   )
 }
