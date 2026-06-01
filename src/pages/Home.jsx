@@ -79,8 +79,8 @@ export default function Home() {
                   boxShadow: '0 8px 24px rgba(26,86,219,0.3)',
                   transition: 'var(--transition)',
                 }}
-                onMouseEnter={e => { e.currentTarget.style.transform = 'translateY(-2px)'; e.currentTarget.style.boxShadow = '0 12px 32px rgba(26,86,219,0.4)' }}
-                onMouseLeave={e => { e.currentTarget.style.transform = 'translateY(0)'; e.currentTarget.style.boxShadow = '0 8px 24px rgba(26,86,219,0.3)' }}
+                  onMouseEnter={e => { e.currentTarget.style.transform = 'translateY(-2px)'; e.currentTarget.style.boxShadow = '0 12px 32px rgba(26,86,219,0.4)' }}
+                  onMouseLeave={e => { e.currentTarget.style.transform = 'translateY(0)'; e.currentTarget.style.boxShadow = '0 8px 24px rgba(26,86,219,0.3)' }}
                 >Hire Me <ArrowRight size={16} /></Link>
 
                 <Link to="/portfolio" style={{
@@ -91,8 +91,8 @@ export default function Home() {
                   background: '#fff',
                   transition: 'var(--transition)',
                 }}
-                onMouseEnter={e => { e.currentTarget.style.borderColor = 'var(--accent)'; e.currentTarget.style.color = 'var(--accent)' }}
-                onMouseLeave={e => { e.currentTarget.style.borderColor = 'var(--border)'; e.currentTarget.style.color = 'var(--text)' }}
+                  onMouseEnter={e => { e.currentTarget.style.borderColor = 'var(--accent)'; e.currentTarget.style.color = 'var(--accent)' }}
+                  onMouseLeave={e => { e.currentTarget.style.borderColor = 'var(--border)'; e.currentTarget.style.color = 'var(--text)' }}
                 >View Work</Link>
 
                 <a href="/cv.pdf" download="Muhammad-Amir-CV.pdf" style={{
@@ -103,8 +103,8 @@ export default function Home() {
                   background: 'rgba(201,168,76,0.06)',
                   transition: 'var(--transition)',
                 }}
-                onMouseEnter={e => { e.currentTarget.style.borderColor = '#c9a84c'; e.currentTarget.style.background = 'rgba(201,168,76,0.12)' }}
-                onMouseLeave={e => { e.currentTarget.style.borderColor = 'rgba(201,168,76,0.4)'; e.currentTarget.style.background = 'rgba(201,168,76,0.06)' }}
+                  onMouseEnter={e => { e.currentTarget.style.borderColor = '#c9a84c'; e.currentTarget.style.background = 'rgba(201,168,76,0.12)' }}
+                  onMouseLeave={e => { e.currentTarget.style.borderColor = 'rgba(201,168,76,0.4)'; e.currentTarget.style.background = 'rgba(201,168,76,0.06)' }}
                 >📄 Download CV</a>
               </div>
 
@@ -135,8 +135,8 @@ export default function Home() {
                 {/* Photo */}
                 <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', padding: '0 24px 24px', marginTop: -48 }}>
                   <img src="/photo.jpg" style={{
-                    width: 120, height: 120, borderRadius: '50%',
-objectFit: 'cover', objectPosition: 'center -10%',
+                    width: 140, height: 160, borderRadius: 16,
+                    objectFit: 'cover', objectPosition: 'center top',
                     border: '4px solid #fff',
                     boxShadow: '0 8px 24px rgba(0,0,0,0.12)',
                   }} />
@@ -192,8 +192,8 @@ objectFit: 'cover', objectPosition: 'center -10%',
               boxShadow: 'var(--shadow)',
               transition: 'var(--transition)',
             }}
-            onMouseEnter={e => { e.currentTarget.style.transform = 'translateY(-4px)'; e.currentTarget.style.boxShadow = 'var(--shadow-lg)' }}
-            onMouseLeave={e => { e.currentTarget.style.transform = 'translateY(0)'; e.currentTarget.style.boxShadow = 'var(--shadow)' }}
+              onMouseEnter={e => { e.currentTarget.style.transform = 'translateY(-4px)'; e.currentTarget.style.boxShadow = 'var(--shadow-lg)' }}
+              onMouseLeave={e => { e.currentTarget.style.transform = 'translateY(0)'; e.currentTarget.style.boxShadow = 'var(--shadow)' }}
             >
               <div style={{ fontFamily: 'var(--font-head)', fontSize: 52, fontWeight: 800, color: 'var(--accent)', lineHeight: 1 }}>{s.value}</div>
               <div style={{ color: 'var(--text2)', fontSize: 14, marginTop: 8, fontWeight: 600 }}>{s.label}</div>
@@ -219,8 +219,8 @@ objectFit: 'cover', objectPosition: 'center -10%',
                 boxShadow: 'var(--shadow)',
                 transition: 'var(--transition)',
               }}
-              onMouseEnter={e => { e.currentTarget.style.borderColor = s.color; e.currentTarget.style.transform = 'translateY(-6px)'; e.currentTarget.style.boxShadow = `0 20px 40px ${s.color}20` }}
-              onMouseLeave={e => { e.currentTarget.style.borderColor = 'var(--border)'; e.currentTarget.style.transform = 'translateY(0)'; e.currentTarget.style.boxShadow = 'var(--shadow)' }}
+                onMouseEnter={e => { e.currentTarget.style.borderColor = s.color; e.currentTarget.style.transform = 'translateY(-6px)'; e.currentTarget.style.boxShadow = `0 20px 40px ${s.color}20` }}
+                onMouseLeave={e => { e.currentTarget.style.borderColor = 'var(--border)'; e.currentTarget.style.transform = 'translateY(0)'; e.currentTarget.style.boxShadow = 'var(--shadow)' }}
               >
                 <div style={{ width: 52, height: 52, borderRadius: 14, background: `${s.color}12`, display: 'flex', alignItems: 'center', justifyContent: 'center', color: s.color, marginBottom: 20 }}>
                   {s.icon}
