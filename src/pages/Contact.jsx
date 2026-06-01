@@ -12,7 +12,7 @@ export default function Contact() {
     e.preventDefault()
     setStatus('loading')
     try {
-      await axios.post('http://localhost:5000/api/contact', form)
+      await axios.post('https://bhone-server.vercel.app/api/contact', form)
       setStatus('success')
       setForm({ name: '', email: '', service: '', budget: '', message: '' })
     } catch {
