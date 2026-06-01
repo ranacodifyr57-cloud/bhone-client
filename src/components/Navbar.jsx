@@ -26,71 +26,62 @@ export default function Navbar() {
     <header style={{
       position: 'fixed', top: 0, left: 0, right: 0, zIndex: 100,
       transition: 'all 0.4s ease',
-      background: scrolled ? 'rgba(10,10,10,0.92)' : 'transparent',
-      backdropFilter: scrolled ? 'blur(20px)' : 'none',
-      borderBottom: scrolled ? '1px solid rgba(255,255,255,0.06)' : '1px solid transparent',
+      background: scrolled ? 'rgba(255,255,255,0.95)' : 'rgba(255,255,255,0.8)',
+      backdropFilter: 'blur(20px)',
+      borderBottom: scrolled ? '1px solid rgba(0,0,0,0.08)' : '1px solid transparent',
+      boxShadow: scrolled ? '0 4px 24px rgba(0,0,0,0.06)' : 'none',
     }}>
       <nav style={{
         maxWidth: 1200, margin: '0 auto',
-        padding: '0 24px',
-        height: 72,
+        padding: '0 24px', height: 72,
         display: 'flex', alignItems: 'center', justifyContent: 'space-between',
       }}>
         {/* Logo */}
         <Link to="/" style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
           <div style={{
-            width: 36, height: 36,
+            width: 38, height: 38,
             background: 'var(--accent)',
-            borderRadius: 8,
+            borderRadius: 10,
             display: 'flex', alignItems: 'center', justifyContent: 'center',
+            boxShadow: '0 4px 12px rgba(26,86,219,0.3)',
           }}>
-            <span style={{ fontFamily: 'var(--font-head)', fontWeight: 800, fontSize: 18, color: '#000' }}>B</span>
+            <span style={{ fontFamily: 'var(--font-head)', fontWeight: 800, fontSize: 18, color: '#fff' }}>B</span>
           </div>
-          <span style={{ fontFamily: 'var(--font-head)', fontWeight: 700, fontSize: 17, letterSpacing: '-0.02em' }}>
+          <span style={{ fontFamily: 'var(--font-head)', fontWeight: 800, fontSize: 18, letterSpacing: '-0.02em', color: 'var(--text)' }}>
             Bhone<span style={{ color: 'var(--accent)' }}>.</span>
           </span>
         </Link>
 
         {/* Desktop links */}
-        <ul style={{ display: 'flex', gap: 8, listStyle: 'none', alignItems: 'center' }}
-            className="desktop-nav">
+        <ul style={{ display: 'flex', gap: 4, listStyle: 'none', alignItems: 'center' }} className="desktop-nav">
           {links.map(l => (
             <li key={l.to}>
               <Link to={l.to} style={{
-                padding: '8px 16px',
-                borderRadius: 8,
-                fontSize: 14,
-                fontWeight: 500,
+                padding: '8px 16px', borderRadius: 8, fontSize: 14, fontWeight: 600,
                 color: pathname === l.to ? 'var(--accent)' : 'var(--text2)',
-                background: pathname === l.to ? 'rgba(232,255,0,0.08)' : 'transparent',
-                transition: 'var(--transition)',
-                display: 'block',
+                background: pathname === l.to ? 'var(--accent-light)' : 'transparent',
+                transition: 'var(--transition)', display: 'block',
               }}
-              onMouseEnter={e => { if (pathname !== l.to) e.target.style.color = 'var(--text)' }}
-              onMouseLeave={e => { if (pathname !== l.to) e.target.style.color = 'var(--text2)' }}
+              onMouseEnter={e => { if (pathname !== l.to) { e.target.style.color = 'var(--text)'; e.target.style.background = 'var(--bg2)' }}}
+              onMouseLeave={e => { if (pathname !== l.to) { e.target.style.color = 'var(--text2)'; e.target.style.background = 'transparent' }}}
               >{l.label}</Link>
             </li>
           ))}
-          <li>
+          <li style={{ marginLeft: 8 }}>
             <Link to="/contact" style={{
-              padding: '9px 20px',
-              borderRadius: 10,
-              fontSize: 14,
-              fontWeight: 600,
-              color: '#000',
-              background: 'var(--accent)',
-              transition: 'var(--transition)',
-              display: 'block',
+              padding: '10px 22px', borderRadius: 10, fontSize: 14, fontWeight: 700,
+              color: '#fff', background: 'var(--accent)',
+              transition: 'var(--transition)', display: 'block',
+              boxShadow: '0 4px 12px rgba(26,86,219,0.3)',
             }}
-            onMouseEnter={e => e.target.style.transform = 'translateY(-1px)'}
-            onMouseLeave={e => e.target.style.transform = 'translateY(0)'}
+            onMouseEnter={e => { e.target.style.transform = 'translateY(-1px)'; e.target.style.boxShadow = '0 8px 20px rgba(26,86,219,0.4)' }}
+            onMouseLeave={e => { e.target.style.transform = 'translateY(0)'; e.target.style.boxShadow = '0 4px 12px rgba(26,86,219,0.3)' }}
             >Hire Me</Link>
           </li>
         </ul>
 
         {/* Mobile toggle */}
-        <button onClick={() => setOpen(!open)} style={{ color: 'var(--text)', padding: 8 }}
-                className="mobile-toggle">
+        <button onClick={() => setOpen(!open)} style={{ color: 'var(--text)', padding: 8 }} className="mobile-toggle">
           {open ? <X size={22} /> : <Menu size={22} />}
         </button>
       </nav>
@@ -98,36 +89,37 @@ export default function Navbar() {
       {/* Mobile menu */}
       {open && (
         <div style={{
-          background: 'rgba(17,17,17,0.98)',
-          backdropFilter: 'blur(20px)',
+          background: '#fff',
           borderTop: '1px solid var(--border)',
           padding: '16px 24px 24px',
+          boxShadow: '0 12px 40px rgba(0,0,0,0.1)',
         }}>
           {links.map(l => (
             <Link key={l.to} to={l.to} style={{
-              display: 'block',
-              padding: '14px 0',
+              display: 'block', padding: '14px 0',
               borderBottom: '1px solid var(--border)',
-              fontFamily: 'var(--font-head)',
-              fontWeight: 600,
-              fontSize: 18,
+              fontFamily: 'var(--font-head)', fontWeight: 700, fontSize: 18,
               color: pathname === l.to ? 'var(--accent)' : 'var(--text)',
             }}>{l.label}</Link>
           ))}
           <Link to="/contact" style={{
-            display: 'block',
-            marginTop: 16,
-            padding: '14px 0',
-            textAlign: 'center',
-            background: 'var(--accent)',
-            borderRadius: 12,
-            fontFamily: 'var(--font-head)',
-            fontWeight: 700,
-            fontSize: 16,
-            color: '#000',
+            display: 'block', marginTop: 16, padding: '14px 0',
+            textAlign: 'center', background: 'var(--accent)',
+            borderRadius: 12, fontFamily: 'var(--font-head)',
+            fontWeight: 700, fontSize: 16, color: '#fff',
           }}>Hire Me</Link>
         </div>
       )}
+
+      {/* WhatsApp */}
+      <a href="https://wa.me/923247352486" target="_blank" style={{
+        position: 'fixed', bottom: 24, right: 24,
+        width: 56, height: 56, borderRadius: '50%',
+        background: '#25D366',
+        display: 'flex', alignItems: 'center', justifyContent: 'center',
+        fontSize: 28, zIndex: 999,
+        boxShadow: '0 4px 20px rgba(37,211,102,0.4)',
+      }}>💬</a>
 
       <style>{`
         .desktop-nav { display: flex !important; }
@@ -137,19 +129,6 @@ export default function Navbar() {
           .mobile-toggle { display: flex !important; }
         }
       `}</style>
-      <a href="https://wa.me/923247352486" 
-   target="_blank"
-   style={{
-     position: 'fixed', bottom: 24, right: 24,
-     width: 56, height: 56, borderRadius: '50%',
-     background: '#25D366',
-     display: 'flex', alignItems: 'center', 
-     justifyContent: 'center',
-     fontSize: 28, zIndex: 999,
-     boxShadow: '0 4px 20px rgba(37,211,102,0.4)',
-   }}>
-  💬
-</a>
     </header>
   )
 }
