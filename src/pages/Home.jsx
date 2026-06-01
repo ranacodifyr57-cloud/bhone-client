@@ -129,7 +129,7 @@ export default function Home() {
                 overflow: 'hidden',
               }}>
                 {/* Card header */}
-                <div style={{ background: 'var(--accent)', padding: '24px 24px 60px', position: 'relative' }}>
+                <div style={{ background: 'var(--accent)', padding: '12px 12px 52px', position: 'relative' }}>
                   <div style={{ position: 'absolute', top: 16, right: 16, padding: '4px 10px', borderRadius: 100, background: 'rgba(255,255,255,0.2)', fontSize: 11, color: '#fff', fontWeight: 600 }}>● Online</div>
                 </div>
                 {/* Photo */}
