@@ -136,7 +136,7 @@ export default function Home() {
                 <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', padding: '0 24px 24px', marginTop: -48 }}>
                   <img src="/photo.jpg" style={{
                     width: 120, height: 120, borderRadius: '50%',
-objectFit: 'cover', objectPosition: 'center 0%',
+objectFit: 'cover', objectPosition: 'center -10%',
                     border: '4px solid #fff',
                     boxShadow: '0 8px 24px rgba(0,0,0,0.12)',
                   }} />
