@@ -16,12 +16,12 @@ export default function Admin() {
   useEffect(() => {
     if (!token) { navigate('/login'); return }
     Promise.all([
-      axios.get('/api/messages', { headers }),
-      axios.get('/api/projects'),
-    ]).then(([m, p]) => {
-      setMessages(m.data)
-      setProjects(p.data)
-    }).catch(() => navigate('/login'))
+  axios.get('https://bhone-server.vercel.app/api/messages', { headers }),
+  axios.get('https://bhone-server.vercel.app/api/projects'),
+]).then(([m, p]) => {
+  setMessages(Array.isArray(m.data) ? m.data : [])
+  setProjects(Array.isArray(p.data) ? p.data : [])
+}).catch(() => navigate('/login'))
     .finally(() => setLoading(false))
   }, [])
 
