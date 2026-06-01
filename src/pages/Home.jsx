@@ -83,8 +83,8 @@ export default function Home() {
                   color: '#000', fontWeight: 700, fontSize: 15,
                   transition: 'var(--transition)',
                 }}
-                onMouseEnter={e => { e.currentTarget.style.transform = 'translateY(-2px)'; e.currentTarget.style.boxShadow = '0 12px 40px rgba(232,255,0,0.3)' }}
-                onMouseLeave={e => { e.currentTarget.style.transform = 'translateY(0)'; e.currentTarget.style.boxShadow = 'none' }}
+                  onMouseEnter={e => { e.currentTarget.style.transform = 'translateY(-2px)'; e.currentTarget.style.boxShadow = '0 12px 40px rgba(232,255,0,0.3)' }}
+                  onMouseLeave={e => { e.currentTarget.style.transform = 'translateY(0)'; e.currentTarget.style.boxShadow = 'none' }}
                 >
                   Hire Me <ArrowRight size={16} />
                 </Link>
@@ -95,11 +95,23 @@ export default function Home() {
                   color: 'var(--text)', fontWeight: 600, fontSize: 15,
                   transition: 'var(--transition)',
                 }}
-                onMouseEnter={e => { e.currentTarget.style.borderColor = 'rgba(255,255,255,0.2)' }}
-                onMouseLeave={e => { e.currentTarget.style.borderColor = 'var(--border)' }}
+                  onMouseEnter={e => { e.currentTarget.style.borderColor = 'rgba(255,255,255,0.2)' }}
+                  onMouseLeave={e => { e.currentTarget.style.borderColor = 'var(--border)' }}
                 >
                   View Work
                 </Link>
+                <a href="/cv.pdf" download="Muhammad-Amir-CV.pdf" style={{
+  display: 'inline-flex', alignItems: 'center', gap: 8,
+  padding: '14px 28px', borderRadius: 12,
+  border: '1px solid rgba(255,255,255,0.2)',
+  color: 'var(--text)', fontWeight: 600, fontSize: 15,
+  transition: 'var(--transition)',
+}}
+onMouseEnter={e => { e.currentTarget.style.borderColor = 'var(--accent)'; e.currentTarget.style.color = 'var(--accent)' }}
+onMouseLeave={e => { e.currentTarget.style.borderColor = 'rgba(255,255,255,0.2)'; e.currentTarget.style.color = 'var(--text)' }}
+>
+  📄 Download CV
+</a>
               </div>
             </div>
 
@@ -115,11 +127,11 @@ export default function Home() {
                 boxShadow: '0 0 60px rgba(232,255,0,0.08)',
               }}>
                 <img src="/photo.jpg" style={{
-  width: 160, height: 160, borderRadius: '50%',
-  objectFit: 'cover', objectPosition: 'top',
-  border: '4px solid var(--accent)',
-  boxShadow: '0 0 30px rgba(232,255,0,0.3)'
-}} />
+                  width: 160, height: 160, borderRadius: '50%',
+                  objectFit: 'cover', objectPosition: 'top',
+                  border: '4px solid var(--accent)',
+                  boxShadow: '0 0 30px rgba(232,255,0,0.3)'
+                }} />
                 <div style={{ textAlign: 'center' }}>
                   <p style={{ fontFamily: 'var(--font-head)', fontWeight: 700, fontSize: 16 }}>Muhammad Amir</p>
                   <p style={{ color: 'var(--text2)', fontSize: 12, marginTop: 4 }}>Full-Stack Developer</p>
@@ -185,8 +197,8 @@ export default function Home() {
                 transition: 'var(--transition)',
                 cursor: 'default',
               }}
-              onMouseEnter={e => { e.currentTarget.style.borderColor = `${s.color}40`; e.currentTarget.style.transform = 'translateY(-4px)' }}
-              onMouseLeave={e => { e.currentTarget.style.borderColor = 'var(--border)'; e.currentTarget.style.transform = 'translateY(0)' }}
+                onMouseEnter={e => { e.currentTarget.style.borderColor = `${s.color}40`; e.currentTarget.style.transform = 'translateY(-4px)' }}
+                onMouseLeave={e => { e.currentTarget.style.borderColor = 'var(--border)'; e.currentTarget.style.transform = 'translateY(0)' }}
               >
                 <div style={{ width: 48, height: 48, borderRadius: 12, background: `${s.color}15`, display: 'flex', alignItems: 'center', justifyContent: 'center', color: s.color, marginBottom: 20 }}>
                   {s.icon}
