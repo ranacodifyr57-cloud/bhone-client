@@ -26,7 +26,7 @@ export default function Admin() {
   }, [])
 
   const deleteMessage = async id => {
-    await axios.delete(`/api/messages/${id}`, { headers })
+    await axios.delete(`https://bhone-server.vercel.app/api/messages/${id}`, { headers })
     setMessages(messages.filter(m => m._id !== id))
   }
 
