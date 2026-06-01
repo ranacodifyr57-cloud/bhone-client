@@ -113,13 +113,17 @@ export default function Navbar() {
 
       {/* WhatsApp */}
       <a href="https://wa.me/923247352486" target="_blank" style={{
-        position: 'fixed', bottom: 24, right: 24,
-        width: 56, height: 56, borderRadius: '50%',
-        background: '#25D366',
-        display: 'flex', alignItems: 'center', justifyContent: 'center',
-        fontSize: 28, zIndex: 999,
-        boxShadow: '0 4px 20px rgba(37,211,102,0.4)',
-      }}>💬</a>
+  position: 'fixed', bottom: 32, right: 32,
+  width: 52, height: 52, borderRadius: '50%',
+  background: '#25D366',
+  display: 'flex', alignItems: 'center', justifyContent: 'center',
+  fontSize: 24, zIndex: 999,
+  boxShadow: '0 4px 16px rgba(37,211,102,0.5)',
+  transition: 'var(--transition)',
+}}
+onMouseEnter={e => { e.currentTarget.style.transform = 'scale(1.1)'; e.currentTarget.style.boxShadow = '0 8px 24px rgba(37,211,102,0.6)' }}
+onMouseLeave={e => { e.currentTarget.style.transform = 'scale(1)'; e.currentTarget.style.boxShadow = '0 4px 16px rgba(37,211,102,0.5)' }}
+>💬</a>
 
       <style>{`
         .desktop-nav { display: flex !important; }
