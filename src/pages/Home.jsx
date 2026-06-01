@@ -133,7 +133,7 @@ export default function Home() {
                   <div style={{ position: 'absolute', top: 16, right: 16, padding: '4px 10px', borderRadius: 100, background: 'rgba(255,255,255,0.2)', fontSize: 11, color: '#fff', fontWeight: 600 }}>● Online</div>
                 </div>
                 {/* Photo */}
-                <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', padding: '0 24px 24px', marginTop: -56 }}>
+                <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', padding: '0 24px 24px', marginTop: -40 }}>
                   <img src="/photo.jpg" style={{
                     width: 140, height: 160, borderRadius: 16,
                     objectFit: 'cover', objectPosition: 'center top',
